@@ -341,7 +341,7 @@
 }
 
 .about-text h2 {
-  text-align: left; /* Maintain alignment for larger screens */
+  text-align: center; /* Maintain alignment for larger screens */
   animation: fade-in 2s ease; /* Subtle fade-in animation for the heading */
 }
 
@@ -744,6 +744,10 @@
   transform: scale(1.02); /* Slight zoom on hover */
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Increased shadow effect on hover */
 }
+
+
+
+
 
 /* ==============================
    FOOTER
