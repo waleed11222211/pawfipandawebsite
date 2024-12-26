@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pawfi Panda</title>
+  <!-- 
+    ADD YOUR CUSTOM FONT HERE, E.G.:
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=YourFontChoice:wght@400;700&display=swap">
+  -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body onload="initAnimations()">  
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+
+  <!-- Banner Section -->
+  <div class="hero-banner">
+    <img src="images/bannar.png" alt="Banner" class="banner-image" />
+  </div>
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <h1>Pawfi Panda</h1>
+    <p>Lazy But Wild.</p>
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+      <img src="images/jpg-46.jpg" alt="Hero Bat" />
+    </div>
+  </div>
+
+  <!-- Buttons in Bottom-Left -->
+  <div class="hero-buttons">
+    <button class="btn">Buy Pawfi</button>
+    <a class="btn" href="https://x.com/pawfionsol?s=11&t=2fneCO86DjqEt51h_Bq1ng">Telegram</a>
+    <a class="btn" href="https://t.me/pawfipanda">Chart</a>
+  </div>
+
+  <!-- Menu Buttons in Bottom-Right -->
+  <nav class="floating-menu">
+    <a href="#about">About</a>
+    <a href="#tokenomics">Tokenomics</a>
+    <!-- <a href="#lock">Lock $BAT</a> -->
+  </nav>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about" id="about">
+  <div class="container">
+    <!-- Left side: Image -->
+    <div class="about-image">
+      <img src="images/about2.png" alt="GM Bat" />
+    </div>
+
+    <!-- Right side: Text -->
+    <div class="about about-text">
+      <h2>About</h2>
+      <p>
+        Pawfi is a vibrant and community-focused cryptocurrency on the Solana blockchain, designed to bring fun, creativity, and inclusivity to the crypto ecosystem. Represented by its charming panda mascot, Pawfi embodies friendliness, sustainability, and adventure.      </p>
+      <p>
+        Holding <code>$PAWFI</code> is more than just owning a token—it’s being part of a thriving, fun-loving and innovative community on Solana.
+      </p>
+      <p>
+        Holders will access to special airdrops, giveaways and community rewards      </p>
+    </div>
+  </div>
+</section>
+
+<section class="tokenomics fade-in" id="tokenomics">
+  <div class="container">
+    <h2 style="text-align: center;">Tokenomics</h2>
+    <div class="tokenomics-layout">
+      <!-- Supply Count Card -->
+      <div class="card" id="supply-count">
+        <h3>Supply Count</h3>
+        <p>1,000,000,000</p>
+      </div>
+      <!-- Image -->
+      <img 
+        src="images/jpg-46.jpg" 
+        alt="Bat Heart" 
+        class="bat-heart"
+      />
+      <!-- Liquidity Pool Card -->
+      <div class="card" id="liquidity-pool">
+        <h3>Liquidity Pool</h3>
+        <p>100% Locked</p>
+      </div>
+      <!-- Contract Address Card -->
+      <div class="card" id="contract-address">
+        <h3>Contract Address</h3>
+        <p>CA: TBA</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- DISCLAIMER SECTION -->
+  <section class="disclaimer fade-in">
+    <div class="container">
+      <div class="disclaimer-text">
+        <h3>Legal Disclaimer:</h3>
+        <p>
+          Pawfi is a vibrant and community-focused cryptocurrency on the Solana blockchain, designed to bring fun, creativity and inclusivity to the crypto ecosystem. Represented by its charming panda mascot, Pawfi embodies friendliness, sustainability and adventure.
+        </p>
+        <br />
+        <h4>Privacy Policy</h4>
+        <p>
+          We don't collect personal information, IP addresses, or identifying data...
+        </p>
+        <p>
+          External links have their own privacy policies. 
+          Personal information is not sold, shared, or collected for tracking.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2024 pawfipanda. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

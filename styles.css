@@ -1,0 +1,905 @@
+@font-face {
+  font-family: 'Rose Minie';
+  src: url('fonts/Winter\ Minie.ttf') format('truetype');
+}
+/* =============================
+   GLOBAL STYLES & FONTS
+   (Include your custom font if needed)
+============================= */
+/*
+@import url('https://fonts.googleapis.com/css2?family=YourFontChoice:wght@400;700&display=swap');
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    overflow-x: hidden;
+  }
+  
+  body {
+    /* If you've imported a font, reference it here:
+       font-family: 'YourFontChoice', sans-serif; 
+    */
+    font-family: 'CustomFont', sans-serif; /* Use the custom font with a fallback */
+    background-color: #6a0080;
+    color: #fff;
+    overflow-x: hidden;
+    font-family: 'Rose Minie';
+    background-color: #6a0080;
+    color: #fff;
+    overflow-x: hidden;
+  }
+  
+/* ==============================
+   HERO SECTION
+============================== */
+.hero {
+  position: relative;
+  background: url("images/bannar.png") no-repeat center center / cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+/* font-family: 'Poppins', sans-serif; Modern font for a pro  fessional look */
+}
+
+/* Dark overlay for better text visibility */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay for contrast */
+  z-index: 0;
+}
+
+/* Banner Section */
+.hero-banner {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  animation: slide-in 8s ease-in-out infinite alternate; /* Subtle sliding animation */
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative; /* Keeps content above overlay */
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: #ffd700; /* Gold for a premium feel */
+  text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7); /* Enhanced shadow for depth */
+  letter-spacing: 1.5px; /* Slight spacing for elegance */
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #eaeaea; /* Softer white for a balanced look */
+  line-height: 1.8; /* Improved readability */
+}
+
+/* Main Image Centered */
+.hero-image {
+  margin: 2rem auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 300px;
+  height: auto;
+  border-radius: 50%; /* Circular effect for a modern look */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Soft shadow for elegance */
+  animation: float 3s ease-in-out infinite; /* Floating animation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7); /* Enhanced shadow on hover */
+}
+
+/* Buttons in Bottom-Left */
+.hero-buttons {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn {
+  background: linear-gradient(90deg, #ff6b00, #ff8c00); /* Gradient for sophistication */
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #ea580c, #ff9d0a);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Menu Buttons in Bottom-Right */
+.floating-menu {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.floating-menu a {
+  background: linear-gradient(90deg, #006f47, #009960); /* Subtle gradient */
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.floating-menu a:hover {
+  background: linear-gradient(90deg, #005f38, #007a4a);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0); /* No movement */
+  }
+  50% {
+    transform: translateY(-10px); /* Moves up slightly */
+  }
+  100% {
+    transform: translateY(0); /* Returns to original position */
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%); /* Start off-screen to the left */
+  }
+  100% {
+    transform: translateX(0); /* Slide in fully visible */
+  }
+}
+
+
+/* ==============================
+   ANIMATION
+============================== */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+  .btn {
+    background-color: #ff6b00;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  .btn:hover {
+    background-color: #ea580c;
+    transform: scale(1.05);
+  }
+  
+  /* Navigation (optional) */
+  .floating-menu {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .floating-menu a {
+    background-color: #ff6b00;
+    padding: 0.75rem;
+    border-radius: 6px;
+    text-align: center;
+    transition: background-color 0.2s ease;
+    color: #fff;
+  }
+  .floating-menu a:hover {
+    background-color: #ff3d00;
+  }
+  
+  /* =============================
+     SECTION WRAPPER
+  ============================= */
+  /* .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  } */
+  
+/* ABOUT SECTION */
+.about {
+  background-color: #006f47; /* Slightly darker green for a refined look */
+  padding: 4rem 2rem;
+  color: #ffffff; /* White text for better readability */
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  color: #ffd700; /* Gold for a polished and professional heading */
+  letter-spacing: 2px; /* Add spacing for a modern look */
+}
+
+.about p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem; /* Slightly larger margin for improved spacing */
+  color: #f1f1f1; /* Softer white for body text */
+}
+
+/* Flexbox Layout for Image and Text */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* ==============================
+   LEFT SIDE: IMAGE
+============================== */
+.about-image {
+  flex: 1;
+  max-width: 350px; /* Increased max width for better balance */
+  text-align: center; /* Center image for a professional touch */
+  animation: fade-in 1.5s ease-in-out; /* Smooth fade-in animation */
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px; /* More rounded corners for elegance */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow for emphasis */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+  animation: float 3s ease-in-out infinite; /* Continuous floating animation */
+}
+
+.about-image img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+/* ==============================
+   RIGHT SIDE: TEXT
+============================== */
+.about-text {
+  flex: 2;
+  max-width: 600px;
+  animation: slide-in 1.5s ease-in-out; /* Slide-in animation for text */
+}
+
+.about-text h2 {
+  text-align: left; /* Maintain alignment for larger screens */
+  animation: fade-in 2s ease; /* Subtle fade-in animation for the heading */
+}
+
+.about-text p {
+  text-align: justify; /* Justify text for a clean block appearance */
+  animation: fade-in 2.5s ease; /* Slight delay for a layered animation effect */
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    max-width: 100%; /* Allow full width for smaller screens */
+  }
+
+  .about-text {
+    max-width: 100%; /* Allow full width for text on smaller screens */
+  }
+
+  .about-text p {
+    text-align: center; /* Center-align text for small screens */
+  }
+}
+
+/* ==============================
+   ANIMATIONS
+============================== */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Slightly move up as it fades in */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Return to original position */
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%); /* Start off-screen to the right */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); /* Slide into view */
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0); /* No movement */
+  }
+  50% {
+    transform: translateY(-10px); /* Float upward */
+  }
+  100% {
+    transform: translateY(0); /* Return to original position */
+  }
+}
+ 
+/* =============================
+     TOKENOMICS SECTION
+============================= */
+.tokenomics {
+  background-color: #74d784; /* Soft green for a professional look */
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  justify-content: center;
+  animation: fade-in 1.5s ease-in-out; /* Smooth fade-in for the entire section */
+}
+
+.tokenomics h2 {
+  font-size: 2.5rem; /* Increased font size for a bold heading */
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: #2c2f2e; /* Darker shade for better contrast */
+  letter-spacing: 2px; /* Adds spacing for a polished look */
+  animation: slide-down 1s ease-in-out; /* Heading slides down into place */
+}
+
+.tokenomics-layout {
+  display: grid;
+  grid-template-areas:
+    "supply-count bat-heart liquidity-pool"
+    "contract-address contract-address contract-address";
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem; /* Increased gap for better spacing */
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 1.5rem;
+  align-items: center;
+  animation: fade-in-up 1.5s ease-in-out; /* Content fades in with upward movement */
+}
+
+.bat-heart {
+  grid-area: bat-heart;
+  width: 250px; /* Slightly smaller for balance */
+  margin: 0 auto;
+  border: 5px solid rgba(255, 255, 255, 0.3); /* Subtle border for focus */
+  border-radius: 50%; /* Makes the image stand out */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Adds a professional shadow */
+  animation: pulse 2s infinite; /* Continuous pulse effect for the image */
+}
+
+#supply-count {
+  grid-area: supply-count;
+  animation: fade-in-left 1.2s ease-in-out; /* Slide in from the left */
+}
+
+#liquidity-pool {
+  grid-area: liquidity-pool;
+  animation: fade-in-right 1.2s ease-in-out; /* Slide in from the right */
+}
+
+#contract-address {
+  grid-area: contract-address;
+  text-align: center;
+  animation: fade-in-up 1.5s ease-in-out; /* Smooth fade-in upwards */
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.15); /* Slightly opaque background */
+  padding: 1.5rem;
+  border-radius: 12px; /* Smoother corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+  animation: fade-in 1.5s ease-in-out; /* Cards fade in */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+.card h3 {
+  font-size: 1.5rem; /* Slightly larger font for headings */
+  margin-bottom: 0.5rem;
+  color: #2c2f2e; /* Darker shade for better readability */
+  font-weight: 600; /* Bold for emphasis */
+  animation: slide-up 1s ease; /* Headings slide up into place */
+}
+
+.card p {
+  color: #3c3f3e; /* Darker text for better readability */
+  font-size: 1rem; /* Standard font size for a professional look */
+  line-height: 1.5; /* Improved line spacing */
+  animation: fade-in 1.5s ease-in-out; /* Paragraphs fade in */
+}
+
+/* =============================
+     RESPONSIVE DESIGN
+============================= */
+@media (max-width: 768px) {
+  .tokenomics-layout {
+    grid-template-areas:
+      "supply-count"
+      "bat-heart"
+      "liquidity-pool"
+      "contract-address";
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .bat-heart {
+    width: 200px; /* Adjust image size for smaller screens */
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .tokenomics h2 {
+    font-size: 2rem; /* Adjust heading size for smaller screens */
+  }
+}
+
+/* =============================
+     ANIMATIONS
+============================= */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Slight upward movement */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Original position */
+  }
+}
+
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px); /* Slide from the left */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Original position */
+  }
+}
+
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px); /* Slide from the right */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Original position */
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Slide from above */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Original position */
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Slide from below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Original position */
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05); /* Slightly larger */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+ /* ==============================
+   DISCLAIMER SECTION
+============================== */
+.disclaimer {
+  background-color: #008e5a; /* Slightly darker green for better contrast */
+  padding: 2rem;
+  text-align: center;
+}
+
+.disclaimer-text {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.15); /* Slightly darker background for readability */
+  padding: 2rem;
+  border-radius: 12px; /* Increased border-radius for more elegant, rounded corners */
+  color: #eaeaea; /* Softer text color */
+  font-size: 1.1rem; /* Slightly larger text for better readability */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  line-height: 1.6; /* Improved line height for readability */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.disclaimer-text:hover {
+  transform: scale(1.02); /* Slight zoom on hover */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Increased shadow effect on hover */
+}
+
+/* ==============================
+   FOOTER
+============================== */
+.footer {
+  background-color: #007a56; /* Darker green for a professional and refined feel */
+  padding: 2rem 1.5rem; /* Increased padding for better spacing */
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+  font-family: 'Arial', sans-serif; /* Clean font for a modern look */
+  letter-spacing: 1px; /* Added letter-spacing for subtle refinement */
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow on the top for depth */
+}
+
+.footer p {
+  margin: 0;
+  color: #eaeaea; /* Lighter color for footer text */
+  font-size: 1rem;
+}
+
+.footer a {
+  color: #ffd700; /* Gold color for links to stand out */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ff9d00; /* Slightly darker gold on hover */
+}
+
+/* Hover Effects */
+.footer a:focus,
+.footer a:hover {
+  text-decoration: underline; /* Underline links on hover/focus for emphasis */
+}
+ /* =============================
+   MEDIA QUERIES FOR RESPONSIVENESS
+============================= */
+
+/* Large Screens (Desktop, 1024px and above) */
+@media (min-width: 1024px) {
+  .hero-content h1 {
+    font-size: 4.5rem;
+  }
+
+  .about h2,
+  .tokenomics h2,
+  .lock-section h2 {
+    font-size: 3rem;
+  }
+
+  .hero-image img {
+    width: 350px;
+  }
+}
+
+/* Medium Screens (Tablet, 768px to 1023px) */
+@media (max-width: 1023px) {
+  /* Adjust Hero Section */
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .hero-buttons {
+    flex-wrap: wrap;
+  }
+
+  .hero-image img {
+    width: 250px;
+  }
+
+  /* About Section Adjustments */
+  .container {
+    flex-direction: column; /* Stack image and text */
+    text-align: center;
+  }
+
+  .about-image,
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-text {
+    margin-top: 1rem;
+  }
+
+  /* Tokenomics Section Adjustments */
+  .tokenomics-cards {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center;
+  }
+
+  .card {
+    max-width: 80%; /* Limit width on smaller screens */
+  }
+
+  /* Lock Section */
+  .lock-section h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Small Screens (Mobile, 480px to 767px) */
+@media (max-width: 767px) {
+  /* Hero Section Adjustments */
+  .hero {
+    padding: 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column; /* Stack buttons */
+    gap: 0.5rem;
+  }
+
+  .hero-image img {
+    width: 200px;
+  }
+
+  /* About Section */
+  .about {
+    padding: 2rem 1rem;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  /* Tokenomics Section */
+  .tokenomics h2 {
+    font-size: 2rem;
+  }
+
+  .tokenomics-cards {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .card {
+    min-width: 100%; /* Stretch to fit screen */
+    max-width: 100%;
+  }
+
+  /* Lock Section */
+  .lock-section h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Extra Small Screens (Mobile, below 480px) */
+@media (max-width: 479px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .hero-buttons {
+    gap: 0.5rem;
+  }
+
+  .hero-image img {
+    width: 150px;
+  }
+
+  .about h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+  }
+
+  .tokenomics h2 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    font-size: 0.9rem;
+  }
+
+  .lock-section h2 {
+    font-size: 1.6rem;
+  }
+}
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  /* Adjust the grid layout for mobile */
+  .tokenomics-layout {
+    grid-template-areas:
+      "supply-count"
+      "bat-heart"
+      "liquidity-pool"
+      "contract-address";
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* Reduced gap for smaller screens */
+    width: 100%;
+    padding: 1rem; /* Padding adjustment for mobile */
+  }
+
+  /* Resize and center the image */
+  .bat-heart {
+    width: 150px; /* Smaller size for mobile */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image */
+  }
+
+  /* Responsive heading styles */
+  .tokenomics h2 {
+    font-size: 2rem; /* Smaller font size for mobile */
+    margin-bottom: 1.5rem; /* Adjust spacing */
+  }
+
+  /* Adjust card styles for smaller screens */
+  .card {
+    padding: 1rem; /* Reduce padding for compact layout */
+    font-size: 0.9rem; /* Slightly smaller font for content */
+  }
+
+  .card h3 {
+    font-size: 1.2rem; /* Adjust heading size */
+    margin-bottom: 0.5rem;
+  }
+
+  .card p {
+    font-size: 0.9rem; /* Adjust paragraph size */
+    line-height: 1.4; /* Maintain readability */
+  }
+
+  /* Adjust supply count and liquidity pool */
+  #supply-count,
+  #liquidity-pool {
+    text-align: center; /* Center-align for better layout */
+  }
+
+  /* Contract address styling */
+  #contract-address {
+    font-size: 0.9rem; /* Reduce font size for smaller screens */
+    padding: 0.5rem; /* Add padding for spacing */
+  }
+}
+
+/* Extra Small Devices (less than 480px) */
+@media (max-width: 480px) {
+  .tokenomics h2 {
+    font-size: 1.8rem; /* Further reduce font size for small screens */
+  }
+
+  .card h3 {
+    font-size: 1rem; /* Smaller headings */
+  }
+
+  .card p {
+    font-size: 0.85rem; /* Smaller text */
+  }
+
+  .bat-heart {
+    width: 120px; /* Even smaller for very small screens */
+  }
+
+  .tokenomics-layout {
+    gap: 1rem; /* Reduce gap further */
+  }
+}
