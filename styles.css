@@ -263,6 +263,15 @@
   background-color: #006f47; /* Slightly darker green for a refined look */
   padding: 4rem 2rem;
   color: #ffffff; /* White text for better readability */
+  opacity: 0; /* Initially hidden for scroll-triggered animation */
+  transform: scale(0.8); /* Start with a scaled-down version */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Transition for fade-in and scaling */
+}
+
+/* Scroll animation trigger */
+.about.visible {
+  opacity: 1;
+  transform: scale(1); /* Scale to original size */
 }
 
 .about h2 {
@@ -297,6 +306,9 @@
   max-width: 350px; /* Increased max width for better balance */
   text-align: center; /* Center image for a professional touch */
   animation: fade-in 1.5s ease-in-out; /* Smooth fade-in animation */
+  opacity: 0; /* Initially hidden for scroll-triggered animation */
+  transform: scale(0.8); /* Start with a scaled-down version */
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .about-image img {
@@ -305,12 +317,11 @@
   border-radius: 15px; /* More rounded corners for elegance */
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow for emphasis */
   transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
-  animation: float 3s ease-in-out infinite; /* Continuous floating animation */
 }
 
-.about-image img:hover {
-  transform: scale(1.05); /* Slight zoom effect on hover */
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+.about-image.visible {
+  opacity: 1;
+  transform: scale(1); /* Scale to original size */
 }
 
 /* ==============================
@@ -319,7 +330,14 @@
 .about-text {
   flex: 2;
   max-width: 600px;
-  animation: slide-in 1.5s ease-in-out; /* Slide-in animation for text */
+  opacity: 0; /* Initially hidden for scroll-triggered animation */
+  transform: scale(0.8); /* Start with a scaled-down version */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.about-text.visible {
+  opacity: 1;
+  transform: scale(1); /* Scale to original size */
 }
 
 .about-text h2 {
@@ -330,6 +348,37 @@
 .about-text p {
   text-align: justify; /* Justify text for a clean block appearance */
   animation: fade-in 2.5s ease; /* Slight delay for a layered animation effect */
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8); /* Start scaled down */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1); /* Scale to original size */
+  }
+}
+
+@keyframes scale-out {
+  from {
+    opacity: 1;
+    transform: scale(1); /* Start at normal size */
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8); /* Scale down and fade out */
+  }
 }
 
 /* ==============================
@@ -391,8 +440,8 @@
   }
 }
  
-/* =============================
-     TOKENOMICS SECTION
+/* ==============================
+   TOKENOMICS SECTION
 ============================= */
 .tokenomics {
   background-color: #74d784; /* Soft green for a professional look */
@@ -403,7 +452,14 @@
   align-items: center;
   padding: 2rem 1rem;
   justify-content: center;
-  animation: fade-in 1.5s ease-in-out; /* Smooth fade-in for the entire section */
+  opacity: 0; /* Initially hidden for scroll-triggered animation */
+  transform: translateY(50px); /* Start with a slight downward offset */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.tokenomics.visible {
+  opacity: 1;
+  transform: translateY(0); /* Move to original position */
 }
 
 .tokenomics h2 {
@@ -426,7 +482,14 @@
   max-width: 1200px;
   margin-top: 1.5rem;
   align-items: center;
-  animation: fade-in-up 1.5s ease-in-out; /* Content fades in with upward movement */
+  opacity: 0; /* Initially hidden for scroll-triggered animation */
+  transform: translateY(50px); /* Start with a slight downward offset */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.tokenomics-layout.visible {
+  opacity: 1;
+  transform: translateY(0); /* Move to original position */
 }
 
 .bat-heart {
@@ -482,6 +545,71 @@
   font-size: 1rem; /* Standard font size for a professional look */
   line-height: 1.5; /* Improved line spacing */
   animation: fade-in 1.5s ease-in-out; /* Paragraphs fade in */
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* =============================
