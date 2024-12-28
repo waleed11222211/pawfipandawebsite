@@ -784,6 +784,33 @@
 .footer a:hover {
   text-decoration: underline; /* Underline links on hover/focus for emphasis */
 }
+
+/* Base styles for all buttons */
+#buy-pawfi, #telegram-link, #chart-link {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin: 5px; /* Space between buttons */
+}
+
+/* Responsive layout for mobile devices */
+@media (max-width: 600px) {
+  div {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center align the buttons */
+  }
+  #buy-pawfi, #telegram-link, #chart-link {
+    width: 90%; /* Full width buttons on smaller screens */
+    margin-bottom: 10px; /* Space between stacked buttons */
+  }
+}
+
  /* =============================
    MEDIA QUERIES FOR RESPONSIVENESS
 ============================= */
@@ -804,6 +831,8 @@
     width: 350px;
   }
 }
+
+
 
 /* Medium Screens (Tablet, 768px to 1023px) */
 @media (max-width: 1023px) {
@@ -1032,5 +1061,13 @@
 
   .tokenomics-layout {
     gap: 1rem; /* Reduce gap further */
+  }
+}
+
+/* Media query to adjust only the background size for mobile devices */
+@media (max-width: 768px) {
+  .hero {
+    background-size: cover; /* Only changes the sizing method, not the entire background property */
+    background-position: 70% center;
   }
 }
