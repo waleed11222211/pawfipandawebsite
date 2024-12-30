@@ -721,7 +721,7 @@
    DISCLAIMER SECTION
 ============================== */
 .disclaimer {
-  background-color: #008e5a; /* Slightly darker green for better contrast */
+  background-color: #006f47; /* Slightly darker green for better contrast */
   padding: 2rem;
   text-align: center;
 }
@@ -732,16 +732,45 @@
   background: rgba(255, 255, 255, 0.15); /* Slightly darker background for readability */
   padding: 2rem;
   border-radius: 12px; /* Increased border-radius for more elegant, rounded corners */
-  color: #eaeaea; /* Softer text color */
+  color: #d8d6d6; /* Softer text color */
   font-size: 1.1rem; /* Slightly larger text for better readability */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
   line-height: 1.6; /* Improved line height for readability */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.roadmap-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-auto-rows: 1fr; /* Ensure all cards have the same height */
+  gap: 2rem; /* Spacing between cards */
+  justify-items: center; /* Center cards horizontally */
+  align-items: start; /* Align items to the start vertically */
+}
+.cardr {
+  background: rgba(255, 255, 255, 0.15); /* Transparent white for a modern look */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Ensure all cards take the same width */
+  
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Ensure content stacks vertically */
+  justify-content: space-between; /* Distribute content evenly */
+}
+.roadmap-cards .cardr:nth-child(3) {
+  grid-column: 1 / -1; /* Span the third card across both columns */
+}
 
-.disclaimer-text:hover {
-  transform: scale(1.02); /* Slight zoom on hover */
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Increased shadow effect on hover */
+@media (max-width: 768px) {
+  .roadmap-cards {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+
+  .roadmap-cards .card:nth-child(3) {
+    grid-column: auto; /* Default single column behavior for small screens */
+  }
 }
 
 
